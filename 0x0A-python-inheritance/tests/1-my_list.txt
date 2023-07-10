@@ -1,0 +1,73 @@
+The ``1-my_list`` module
+======================
+
+Using ``MyList`` class
+-------------------
+
+Import MyList from 1-my_list module:
+
+	>>> MyList = __import__('1-my_list').MyList
+
+Test object initialization with integer argument 0:
+
+	>>> my_list = MyList(0)
+	Traceback (most recent call last):
+	TypeError: 'int' object is not iterable
+
+Test object initialization with integer argument 1:
+
+	>>> my_list = MyList(1)
+	Traceback (most recent call last):
+	TypeError: 'int' object is not iterable
+
+Test object initialization with string argument:
+
+	>>> my_list = MyList("string")
+	>>> my_list.print_sorted()
+	['g', 'i', 'n', 'r', 's', 't']
+
+Test `print_sorted` with no args:
+
+	>>> my_list = MyList()
+	>>> my_list.append(1)
+	>>> my_list.append(5)
+	>>> my_list.append(3)
+	>>> my_list.print_sorted()
+	[1, 3, 5]
+
+
+Test `print_sorted` with one arg:
+
+	>>> my_list = MyList()
+	>>> my_list.append(1)
+	>>> my_list.append(5)
+	>>> my_list.append(3)
+	>>> my_list.print_sorted(1)
+	Traceback (most recent call last):
+	TypeError: print_sorted() takes 1 positional argument but 2 were given
+
+Test `print_sorted` with one arg as none int:
+
+	>>> my_list = MyList()
+	>>> my_list.append(1)
+	>>> my_list.append(5)
+	>>> my_list.append(3)
+	>>> my_list.print_sorted("not int")
+	Traceback (most recent call last):
+	TypeError: print_sorted() takes 1 positional argument but 2 were given
+
+Test `print_sorted` with empty list:
+
+	>>> my_list = MyList()
+	>>> my_list.print_sorted()
+	[]
+
+Test `print_sorted` returns a new list:
+
+	>>> my_list.append(1)
+	>>> my_list.append(5)
+	>>> my_list.append(3)
+	>>> my_list.print_sorted() != print(my_list)
+	[1, 3, 5]
+	[1, 5, 3]
+	False
