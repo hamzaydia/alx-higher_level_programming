@@ -1,0 +1,26 @@
+3-say_my_name module
+=====================
+
+How to Use `say_my_name`
+=====================
+
+Import `say_my_name` from the `3-say_my_name` module:
+>>> say_my_name = __import__('3-say_my_name').say_my_name
+
+# Test with both first and last name
+>>> say_my_name("Hamza", "Ezzaydia")
+My name is Hamza Ezzaydia
+
+# Test with only first name
+>>> say_my_name("Hamza")
+My name is Hamza 
+
+# Test with empty strings
+>>> say_my_name("", "")
+My name is  
+
+# Test with invalid types
+>>> say_my_name(1, 2) # doctest: +ELLIPSIS
+Traceback (most recent call last):
+    ...
+TypeError: first_name must be a string
