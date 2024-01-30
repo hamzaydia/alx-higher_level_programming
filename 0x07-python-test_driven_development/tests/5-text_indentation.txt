@@ -1,0 +1,27 @@
+5-text_indentation module
+=====================
+
+How to Use `text_indentation`
+=====================
+
+Import `text_indentation` from the `5-text_indentation` module:
+>>> text_indentation = __import__('5-text_indentation').text_indentation
+>>> text_indentation("")
+<BLANKLINE>
+>>> text_indentation("a")
+a
+>>> text_indentation("This is a test")
+This is a test
+
+>>> text_indentation("This. is? a test: with multiple. special characters.")
+This.
+<BLANKLINE>
+ is?
+<BLANKLINE>
+ a test:
+<BLANKLINE>
+ with multiple.
+<BLANKLINE>
+ special characters.
+>>> text_indentation("  This has trailing whitespace.  ")
+This has trailing whitespace.
