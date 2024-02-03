@@ -1,3 +1,7 @@
+#!/usr/bin/python3
+""" Module to divides all elements of matrix """
+
+
 def matrix_divided(matrix, div):
     """Divides all elements of a matrix by a number, with input validation and rounding."""
     if not isinstance(matrix, list) or not all(isinstance(row, list) for row in matrix):

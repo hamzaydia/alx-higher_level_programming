@@ -1,3 +1,7 @@
+#!/usr/bin/python3
+""" Module for  matrix multiplication """
+
+
 def matrix_mul(m_a, m_b):
    """Multiplies two matrices, performing input validation and raising appropriate exceptions."""
 

@@ -1,3 +1,7 @@
+#!/usr/bin/python3
+""" Module to print name """
+
+
 def say_my_name(first_name, last_name=""):
     """ Print the first and last name """
     if not isinstance(first_name, str):
