@@ -1,0 +1,105 @@
+The `7-base_geometry` module
+============================================
+Using `BaseGeometry` class
+============================================
+
+Import `BaseGeometry` from the `7-base_geometry` module:
+
+	>>> BaseGeometry = __import__('7-base_geometry').BaseGeometry
+
+Area with one argument:
+
+	>>> shape = BaseGeometry()
+	>>> shape.area(1)
+	Traceback (most recent call last):
+	TypeError: area() takes 1 positional argument but 2 were given
+
+
+Area with no arguments:
+
+	>>> shape = BaseGeometry()
+	>>> shape.area()
+	Traceback (most recent call last):
+	Exception: area() is not implemented
+
+Area with one argument as none int:
+
+	>>> shape= BaseGeometry()
+	>>> shape.area("not int")
+	Traceback (most recent call last):
+	TypeError: area() takes 1 positional argument but 2 were given
+
+Integer validator with no arguments:
+
+	>>> shape = BaseGeometry()
+	>>> shape.integer_validator()
+	Traceback (most recent call last):
+	TypeError: integer_validator() missing 2 required positional arguments: 'name' and 'value'
+
+Integer validator with one argument:
+
+	>>> shape = BaseGeometry()
+	>>> shape.integer_validator("shape")
+	Traceback (most recent call last):
+	TypeError: integer_validator() missing 1 required positional argument: 'value'
+
+Integer validator with two arguments:
+
+	>>> shape = BaseGeometry()
+	>>> shape.integer_validator("shape", 10)
+
+Integer validator with three arguments:
+
+	>>> shape = BaseGeometry()
+	>>> shape.integer_validator("shape", 10, 20)
+	Traceback (most recent call last):
+	TypeError: integer_validator() takes 3 positional arguments but 4 were given
+
+Integer validator with `value` argument as non int:
+
+	>>> shape= BaseGeometry()
+	>>> shape.integer_validator("shape", 1.1)
+	Traceback (most recent call last):
+	TypeError: shape must be an integer
+
+	>>> shape.integer_validator("age")
+	Traceback (most recent call last):
+	TypeError: integer_validator() missing 1 required positional argument: 'value'
+
+	>>> shape.integer_validator()
+	Traceback (most recent call last):
+	TypeError: integer_validator() missing 2 required positional arguments: 'name' and 'value'
+
+	>>> shape.integer_validator("age", 1)
+
+	>>> shape.integer_validator("age", -4)
+	Traceback (most recent call last):
+	ValueError: age must be greater than 0
+
+	>>> shape.integer_validator("age", "4")
+	Traceback (most recent call last):
+	TypeError: age must be an integer
+
+	>>> shape.integer_validator("age", (4,))
+	Traceback (most recent call last):
+	TypeError: age must be an integer
+
+	>>> shape.integer_validator("age", None)
+	Traceback (most recent call last):
+	TypeError: age must be an integer
+
+	>>> shape.integer_validator("age", 0)
+	Traceback (most recent call last):
+	ValueError: age must be greater than 0
+
+	>>> shape.integer_validator("age", [3])
+	Traceback (most recent call last):
+	TypeError: age must be an integer
+
+	>>> shape.integer_validator("age", True)
+	Traceback (most recent call last):
+	TypeError: age must be an integer
+
+	>>> shape.integer_validator("age", {3, 4})
+	Traceback (most recent call last):
+	TypeError: age must be an integer
