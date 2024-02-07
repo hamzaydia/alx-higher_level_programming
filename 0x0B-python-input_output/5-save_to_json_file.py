@@ -4,5 +4,6 @@ import json
 
 
 def save_to_json_file(my_obj, filename):
-    """ Return JSON of string object """
-    return json.dumps(my_obj)
+    """ Save JSON of string object """
+    with open(filename, 'w') as f:
+        json.dump(my_obj, f)
